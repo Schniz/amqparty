@@ -1,12 +1,15 @@
 var expect = require('chai').expect;
 
 var amqparty = require('..');
+var connect = amqparty.connect;
+var handle = amqparty.handle;
+
 var rabbitConfig = require('./rabbit-config');
 
 describe('Full trip', function() {
   before(function(done) {
-    amqparty.connect(rabbitConfig).then(function() {
-      amqparty.handle({
+    connect(rabbitConfig).then(function() {
+      handle({
         exchange: 'joe',
         name: 'userInfo'
       }, function(data, resolve, reject) {

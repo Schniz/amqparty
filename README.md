@@ -38,11 +38,11 @@ Handling data in a service
 --------------------------
 
 ```js
-const amqparty = require('amqparty');
+const { connect, handle } = require('amqparty');
 
 const listen = () => {
   console.log("Started...");
-  amqparty.handle({
+  handle({
     exchange: 'joe',
     name: 'userInfo'
   }, (data, resolve, reject) => {
@@ -53,7 +53,7 @@ const listen = () => {
   });
 };
 
-amqparty.connect({ ...amqProperties }).then(listen);
+connect({ ...amqProperties }).then(listen);
 ```
 
 How it works

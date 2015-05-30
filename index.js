@@ -4,6 +4,9 @@ var debug = require('debug')('amqparty');
 var Sender = require('./sender');
 
 var Amqparty = function() {
+  this.handle = this.handle.bind(this);
+  this.sender = this.sender.bind(this);
+  this.connect = this.connect.bind(this);
 };
 
 Amqparty.prototype.handle = function(options, callback) {
