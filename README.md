@@ -5,6 +5,16 @@ but I can't understand all these terms... and all this boilerplate.. waaaa...
 
 So lets party.
 
+Installing
+----------
+
+```bash
+npm install --save amqparty
+```
+
+Using
+-----
+
 ```js
 const amqparty = require('amqparty');
 
