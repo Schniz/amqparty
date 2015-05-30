@@ -16,6 +16,13 @@ describe('Full trip', function() {
       name: 'userInfo'
     });
 
+    amqparty.handle({
+      exchange: 'joe',
+      name: 'userInfo'
+    }, function(data, resolve, reject) {
+      console.log(data);
+    });
+
     send({ email: 'gal@spitfire.co.il' }).then(function(data) {
       expect(data.name).to.equal('Gal Schlezinger');
       done();
