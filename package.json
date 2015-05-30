@@ -25,5 +25,16 @@
     "bluebird": "^2.9.27",
     "debug": "^2.2.0",
     "uuid": "^2.0.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Schniz/amqparty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Schniz/amqparty/issues"
+  },
+  "homepage": "https://github.com/Schniz/amqparty"
 }
