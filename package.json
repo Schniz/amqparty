@@ -1,0 +1,26 @@
+{
+  "name": "amqparty",
+  "version": "0.0.0",
+  "description": "making microservices fun with amqp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [
+    "amqp",
+    "microservices",
+    "services",
+    "micro",
+    "sugar",
+    "syntax"
+  ],
+  "author": "Gal Schlezinger (gal@spitfire.co.il)",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "amqp": "^0.2.4"
+  }
+}
