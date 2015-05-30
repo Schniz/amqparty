@@ -1,10 +1,14 @@
 AMQParty
 ========
+All I wanted was to build a great microservices using RabbitMQ.
+but I can't understand all these terms... and all this boilerplate.. waaaa...
 
-Instead of using `exchnage` and `queues` and stuff..
+So lets party.
 
 ```js
-const amqparty = require('amqparty'); // default instance of amqparty.Amqparty;
+const amqparty = require('amqparty');
+
+// Just connect with the amqp library settings
 amqparty.connect({ ...amqpProperties }).then(() => {
   console.log("Connected..");
   const send = amqparty.sender({ exchange: 'joe', name: 'userInfo' });
@@ -13,9 +17,9 @@ amqparty.connect({ ...amqpProperties }).then(() => {
     some: 'data',
     iWould: 'like to send'
   }).then(data => {
-    console.log('data: ', data);
+    console.log('got myself: ', data);
   }).catch(err => {
-    console.error('error: ', err);
+    console.error('oh noes: ', err);
   });
 });
 ```
@@ -32,9 +36,9 @@ const listen = () => {
     exchange: 'joe',
     name: 'userInfo'
   }, (data, resolve, reject) => {
-    // Do your thing
+    // Do your thing here...
     resolve({
-      myResponse: 'yay'
+      heyYou: 'ohai'
     });
   });
 };
@@ -42,8 +46,8 @@ const listen = () => {
 amqparty.connect({ ...amqProperties }).then(listen);
 ```
 
-How should it work?
--------------------
+How it works
+------------
 
 ### sender
 - creates a queue('joe', 'userInfo')
