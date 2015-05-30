@@ -13,12 +13,22 @@ Amqparty.prototype.handle = function(options, callback) {
   var exchange = connection.exchange(options.exchange, { type: 'direct', autoDelete: false, durable: true });
   queue.subscribe(function(message, headers) {
     var responseKey = actionName + '.response.' + headers.messageUuid;
-    console.log(responseKey);
-    exchange.publish(responseKey, { name: 'Gal Schlezinger' }, {
-      headers: {
-        messageUuid: headers.messageUuid
-      }
-    });
+    var resolve = function(data) {
+      exchange.publish(responseKey, data, {
+        headers: {
+          messageUuid: headers.messageUuid
+        }
+      });
+    };
+    var reject = function(data) {
+      exchange.publish(responseKey, data, {
+        headers: {
+          messageUuid: headers.messageUuid,
+          isError: true
+        }
+      });
+    };
+    callback(message, resolve, reject);
   });
   queue.bind(exchange.name, actionName + '.request');
 };
