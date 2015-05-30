@@ -1,6 +1,6 @@
 {
   "name": "amqparty",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "making microservices fun with amqp",
   "main": "index.js",
   "scripts": {
