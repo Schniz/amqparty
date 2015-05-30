@@ -21,6 +21,8 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "amqp": "^0.2.4"
+    "amqp": "^0.2.4",
+    "bluebird": "^2.9.27",
+    "debug": "^2.2.0"
   }
 }

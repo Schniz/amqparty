@@ -3,9 +3,9 @@ var env = function(name) {
 };
 
 module.exports = {
-  host: env('host'),
-  port: env('port'),
-  user: env('user'),
-  password: env('password'),
-  vhost: env('vhost')
+  host: env('host') || 'localhost',
+  port: parseInt(env('port') || 5672),
+  login: env('login') || 'guest',
+  password: env('password') || 'guest',
+  vhost: env('vhost') || '/'
 };
